@@ -46,24 +46,25 @@ if "toast_shown" not in st.session_state:
 
 # Tampilkan tanggal dan judul dengan CSS
 tampilkan_tanggal()
+
+
 st.markdown(
     """
     <style>
     .custom-title {
         color: #11009E;
-        display: inline-block;
-        padding: 2%;
-        margin: 5% 0;
-        border-width: 5px;
-        border-style: solid;  /* ini border style */
-        
-        font-size: 19px;
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     </style>
-    <h1 class="custom-title">Analisis Dataset Progam IP4T </h1>
+    <h1 class="custom-title">Analisis Dataset Program IP4T</h1>
     """,
     unsafe_allow_html=True
 )
+
 
 # Upload file
 file = st.file_uploader("Unggah file CSV", type=["csv"])
