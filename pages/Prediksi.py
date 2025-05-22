@@ -3,6 +3,7 @@ import pickle
 import pandas as pd
 import time
 import os
+import base64
 
 # --------------------- Konfigurasi Halaman ---------------------
 # Atur layout wide

@@ -7,7 +7,7 @@ import os
 import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
-
+import base64
 
 # Atur layout wide
 st.set_page_config(layout="wide", page_title="Informasi Dataset", initial_sidebar_state="auto")
