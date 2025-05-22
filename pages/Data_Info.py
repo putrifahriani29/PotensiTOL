@@ -51,14 +51,13 @@ st.markdown(
     <style>
     .custom-title {
         color: #11009E;
-        border-radius: 25%;
         display: inline-block;
         padding: 2%;
         margin: 5% 0;
         border-width: 5px;
         border-style: solid;  /* ini border style */
-        border-color: #11009E; /* warna border sama dengan teks */
-        font-size: 18px;
+        
+        font-size: 19px;
     }
     </style>
     <h1 class="custom-title">Analisis Dataset Progam IP4T </h1>
