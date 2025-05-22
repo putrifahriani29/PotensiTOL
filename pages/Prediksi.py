@@ -4,7 +4,7 @@ import pandas as pd
 import time
 
 # --------------------- Konfigurasi Halaman ---------------------
-st.set_page_config(page_title="Prediksi Potensi TOL TEST", layout="centered")
+st.set_page_config(page_title="Prediksi Potensi TOL", layout="centered")
 st.markdown("""
     <div style='
         text-align: center;
