@@ -7,6 +7,23 @@ import time
 # Atur layout wide
 st.set_page_config(layout="wide", page_title="Prediksi Potensi TOL", initial_sidebar_state="auto")
 
+# Function to display and center the logo in the sidebar
+def display_logo():
+    logo_path = 'logo.png'  # Adjust path to your logo file
+    if os.path.exists(logo_path):
+        with open(logo_path, "rb") as image_file:
+            encoded_image = base64.b64encode(image_file.read()).decode()
+        st.sidebar.markdown(
+            f"""
+            <div style="text-align: center;">
+                <img src="data:image/png;base64,{encoded_image}" width="150" />
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+    else:
+        st.sidebar.error(f"Logo file '{logo_path}' not found. Please ensure the file is in the correct directory.")
+display_logo()
 st.markdown("""
     <div style='
         text-align: center;
@@ -115,7 +132,7 @@ if submit:
         "PEMILIKAN TANAH": kepemilikan,
         "PENGGUNAAN TANAH": penggunaan,
         "PEMANFAATAN TANAH": pemanfaatan,
-        "Luas  m2": luas   # perhatikan spasi ini
+        "Luas  m2": luas   
     }])
 
     try:

@@ -11,6 +11,23 @@ import numpy as np
 # Atur layout wide
 st.set_page_config(layout="wide", page_title="Informasi Dataset", initial_sidebar_state="auto")
 
+# Function to display and center the logo in the sidebar
+def display_logo():
+    logo_path = 'logo.png'  # Adjust path to your logo file
+    if os.path.exists(logo_path):
+        with open(logo_path, "rb") as image_file:
+            encoded_image = base64.b64encode(image_file.read()).decode()
+        st.sidebar.markdown(
+            f"""
+            <div style="text-align: center;">
+                <img src="data:image/png;base64,{encoded_image}" width="150" />
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+    else:
+        st.sidebar.error(f"Logo file '{logo_path}' not found. Please ensure the file is in the correct directory.")
+display_logo()
 # Fungsi tampilkan tanggal sekarang
 def tampilkan_tanggal():
     now = datetime.now()
@@ -33,12 +50,14 @@ st.markdown(
     <style>
     .custom-title {
         color: #11009E;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: 900;
-        font-size: 3rem;
-        text-align: center;
-        margin-bottom: 1rem;
-        text-shadow: 1px 1px 2px #555;
+        border-radius: 25%;
+        display: inline-block;
+        padding: 2%;
+        margin: 5% 0;
+        border-width: 5px;
+        border-style: solid;  /* ini border style */
+        border-color: #11009E; /* warna border sama dengan teks */
+        font-size: 18px;
     }
     </style>
     <h1 class="custom-title">Analisis Dataset Progam IP4T </h1>
