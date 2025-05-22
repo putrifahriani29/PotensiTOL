@@ -32,7 +32,7 @@ st.markdown(
     """
     <style>
     .custom-title {
-        color: #1E3A8A;
+        color: #11009E;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: 900;
         font-size: 3rem;
@@ -41,7 +41,7 @@ st.markdown(
         text-shadow: 1px 1px 2px #555;
     }
     </style>
-    <h1 class="custom-title">Analisis Data Pemanfaatan & Perlindungan Tanah</h1>
+    <h1 class="custom-title">Analisis Dataset Progam IP4T </h1>
     """,
     unsafe_allow_html=True
 )
