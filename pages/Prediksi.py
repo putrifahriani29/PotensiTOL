@@ -4,7 +4,9 @@ import pandas as pd
 import time
 
 # --------------------- Konfigurasi Halaman ---------------------
-st.set_page_config(page_title="Prediksi Potensi TOL", layout="centered")
+# Atur layout wide
+st.set_page_config(layout="wide", page_title="Prediksi Potensi TOL", initial_sidebar_state="auto")
+
 st.markdown("""
     <div style='
         text-align: center;

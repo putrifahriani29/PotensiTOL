@@ -7,6 +7,10 @@ import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
 
+
+# Atur layout wide
+st.set_page_config(layout="wide", page_title="Informasi Dataset", initial_sidebar_state="auto")
+
 # Fungsi tampilkan tanggal sekarang
 def tampilkan_tanggal():
     now = datetime.now()

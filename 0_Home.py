@@ -4,6 +4,8 @@ import os
 from datetime import datetime
 import base64
 
+st.set_page_config(layout="wide", page_title="Home", initial_sidebar_state="auto")
+
 # Function to display and center the logo in the sidebar
 def display_logo():
     logo_path = 'logo.png'  # Adjust path to your logo file
