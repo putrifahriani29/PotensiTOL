@@ -2,7 +2,5 @@ pandas==2.1.4
 numpy
 streamlit
 scikit-learn
-streamlit_extras
-pip==23.3.2
 plotly
 tabulate
