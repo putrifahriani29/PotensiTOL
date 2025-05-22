@@ -1,0 +1,10 @@
+
+data mining - buat skripsi aku output nya nanti webstreamlit-Balas
+
+k-measn cluster data pemanfaatan tanah
+
+
+
+1. Setting ENC
+- Open Anaconda Prompt --> conda create -n streamlit python=3.9 --> conda activate streamlit
+Streamlt -- Cloud -- 
