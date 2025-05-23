@@ -40,7 +40,7 @@ def display_header():
                 border-color: #11009E; /* warna border sama dengan teks */
                 font-size: 18px;
             ">
-                Program Indeks Pemanfaatan dan Perlindungan Tanah (IP4T)
+                Program Inventarisasi Penguasaan, Pemilikan, Penggunaan, dan Pemanfaatan Tanah (IP4T)
             </h1>
         </div>
         """,
@@ -68,15 +68,10 @@ def display_date_time():
 def display_data_info():
     st.markdown("""
     <div style="color: #0F2167; font-size: 19px; text-align: justify; line-height: 1.6;">
-        <strong>IP4T</strong> (Inventarisasi Penguasaan, Pemilikan, Penggunaan, dan Pemanfaatan Tanah) adalah kegiatan pendataan yang dilakukan untuk mengidentifikasi dan mendokumentasikan informasi mengenai tanah, termasuk siapa yang menguasai, memiliki, menggunakan, dan memanfaatkan tanah tersebut.
-
-        <br><br>
-
-        Kegiatan ini bertujuan untuk memberikan kepastian hukum dan informasi yang akurat tentang status tanah. IP4T digunakan sebagai dasar dalam pengambilan kebijakan yang berkaitan dengan <strong>optimalisasi lahan</strong>, <strong>penyelesaian konflik agraria</strong>, serta dukungannya terhadap pelaksanaan <strong>reforma agraria</strong>.
-
-        <br><br>
-
-        Dasar hukum pelaksanaan program IP4T merujuk pada <strong>Undang-Undang Nomor 5 Tahun 1960</strong> tentang <em>Ketentuan Pokok-Pokok Agraria (UUPA)</em>, yang menjadi landasan hukum utama dalam pengaturan agraria di Indonesia. Undang-undang ini lahir sebagai bentuk <strong>reformasi agraria</strong> untuk mengatasi ketimpangan penguasaan tanah, meningkatkan kesejahteraan rakyat, dan menciptakan keadilan agraria yang merata di seluruh wilayah Indonesia.
+        <strong>IP4T</strong> (Inventarisasi Penguasaan, Pemilikan, Penggunaan, dan Pemanfaatan Tanah) adalah kegiatan pendataan yang dilakukan untuk mengidentifikasi dan mendokumentasikan informasi mengenai tanah, termasuk siapa yang menguasai, memiliki, menggunakan, dan memanfaatkan tanah tersebut. 
+                <br><br>Kegiatan ini bertujuan untuk memberikan kepastian hukum dan informasi yang akurat tentang status tanah. IP4T digunakan sebagai dasar dalam pengambilan kebijakan yang berkaitan dengan <strong>optimalisasi lahan</strong>, <strong>penyelesaian konflik agraria</strong>, serta dukungannya terhadap pelaksanaan <strong>reforma agraria</strong>.
+                <br><br>
+                Dasar hukum pelaksanaan program IP4T merujuk pada <strong>Undang-Undang Nomor 5 Tahun 1960</strong> tentang <em>Ketentuan Pokok-Pokok Agraria (UUPA)</em>, yang menjadi landasan hukum utama dalam pengaturan agraria di Indonesia. Undang-undang ini lahir sebagai bentuk <strong>reformasi agraria</strong> untuk mengatasi ketimpangan penguasaan tanah, meningkatkan kesejahteraan rakyat, dan menciptakan keadilan agraria yang merata di seluruh wilayah Indonesia.
     </div>
 
     <br>
