@@ -67,11 +67,18 @@ def display_date_time():
 # Function to display data information
 def display_data_info():
     st.markdown("""
-    <div style="color: #0F2167; font-size: 19px; text-align: justify;">
-        <strong>IP4T</strong> (Indeks Pemanfaatan dan Perlindungan Tanah) adalah program pemerintah Indonesia yang bertujuan untuk mengevaluasi dan mengelola pemanfaatan tanah secara berkelanjutan, dengan tetap memperhatikan aspek perlindungan lingkungan. Program ini menyajikan data dan informasi mengenai status <em>penguasaan</em>, <em>pemilikan</em>, <em>penggunaan</em>, dan <em>pemanfaatan tanah</em> di suatu wilayah. IP4T digunakan sebagai dasar dalam pengambilan kebijakan yang berkaitan dengan <strong>optimalisasi lahan</strong>, <strong>penyelesaian konflik agraria</strong>, serta dukungannya terhadap pelaksanaan <strong>reforma agraria</strong>.
-                <br><br>
+    <div style="color: #0F2167; font-size: 19px; text-align: justify; line-height: 1.6;">
+        <strong>IP4T</strong> (Inventarisasi Penguasaan, Pemilikan, Penggunaan, dan Pemanfaatan Tanah) adalah kegiatan pendataan yang dilakukan untuk mengidentifikasi dan mendokumentasikan informasi mengenai tanah, termasuk siapa yang menguasai, memiliki, menggunakan, dan memanfaatkan tanah tersebut.
+
+        <br><br>
+
+        Kegiatan ini bertujuan untuk memberikan kepastian hukum dan informasi yang akurat tentang status tanah. IP4T digunakan sebagai dasar dalam pengambilan kebijakan yang berkaitan dengan <strong>optimalisasi lahan</strong>, <strong>penyelesaian konflik agraria</strong>, serta dukungannya terhadap pelaksanaan <strong>reforma agraria</strong>.
+
+        <br><br>
+
         Dasar hukum pelaksanaan program IP4T merujuk pada <strong>Undang-Undang Nomor 5 Tahun 1960</strong> tentang <em>Ketentuan Pokok-Pokok Agraria (UUPA)</em>, yang menjadi landasan hukum utama dalam pengaturan agraria di Indonesia. Undang-undang ini lahir sebagai bentuk <strong>reformasi agraria</strong> untuk mengatasi ketimpangan penguasaan tanah, meningkatkan kesejahteraan rakyat, dan menciptakan keadilan agraria yang merata di seluruh wilayah Indonesia.
     </div>
+
     <br>
 
     <span style="color: #6DB9EF; font-size: 28px; font-weight: bold; text-decoration: underline;">Pengumpulan Data</span>
