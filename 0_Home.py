@@ -78,7 +78,7 @@ def display_data_info():
 
     <span style="color: #6DB9EF; font-size: 28px; font-weight: bold; text-decoration: underline;">Pengumpulan Data</span>
     <div style="color: #0F2167; font-size: 19px; text-align: justify; margin-top: 10px;">
-        Data yang digunakan dalam penelitian ini diperoleh melalui hasil survei yang dilakukan oleh <strong>Kantor Badan Pertanahan Nasional (BPN) Kabupaten Sukabumi</strong>. Permintaan data dilakukan secara resmi kepada pihak BPN untuk memperoleh informasi terkait penguasaan, pemilikan, penggunaan, dan pemanfaatan tanah (IP4T) di wilayah tersebut.
+        Data yang digunakan dalam penelitian ini diperoleh melalui hasil survei yang dilakukan oleh <strong>Kantor Badan Pertanahan Nasional (BPN) Kabupaten Sukabumi</strong>. Permintaan data dilakukan secara resmi kepada pihak BPN untuk memperoleh informasi terkait penguasaan, pemilikan, penggunaan, dan pemanfaatan tanah dari progam IP4T di wilayah tersebut.
     </div>
     <br>
 
