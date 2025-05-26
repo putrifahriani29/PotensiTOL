@@ -96,7 +96,7 @@ def display_data_info():
         </li>
         <li><code>Luas  m2</code>: Luas area tanah yang diamati.</li>
         <li><code>PENGGUNAAN TANAH</code>: Jenis penggunaan tanah pada area tersebut.</li>
-        <li><code>PEMANFAATAN TANAH</code>: </li>
+        <li><code>PEMANFAATAN TANAH</code>: Test </li>
         <li><code>PEMILIKAN TANAH</code>: Informasi mengenai siapa pemilik tanah tersebut.</li>
         <li><code>PENGUASAAN TANAH</code>: Status penguasaan atas tanah tersebut.</li>
     </ol>
