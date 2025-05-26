@@ -106,7 +106,6 @@ def display_data_info():
 
 # Display content for the single page
 display_logo()
-st.sidebar.markdown('Aplikasi ini merupakan user interface Prediksi Potensi TOL')
 display_header()
 display_date_time()
 display_data_info()

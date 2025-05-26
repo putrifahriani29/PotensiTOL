@@ -1,4 +1,5 @@
 import streamlit as st
+import pickle
 import pandas as pd
 from datetime import datetime
 from io import StringIO
@@ -206,6 +207,46 @@ if st.button("📂 Lakukan Analisis Dataset"):
         col1.info("Kolom 'POTENSI TOL' tidak ditemukan pada data.")
         col2.info("Kolom 'POTENSI TOL' tidak ditemukan pada data.")
 
-    
 
+    # --------------------- Load Model ---------------------
+   # Fungsi untuk memuat model dari file .pkl
+    def load_model():
+        model_path = "model.pkl"
+        if os.path.exists(model_path):
+            with open(model_path, "rb") as file:
+                return pickle.load(file)
+        else:
+            st.error("❌ File 'model.pkl' tidak ditemukan.")
+            return None
+
+
+    # Load model dari file pickle
+model = load_model()
+
+if model is not None:
+    st.subheader("📋 Metrik Evaluasi")
+
+    try:
+        y_pred = model.predict(X_encoded)
+
+        tab1, tab2 = st.tabs(["Confusion Matrix", "Classification Report"])
+
+        with tab1:
+            cm = confusion_matrix(y, y_pred, labels=np.unique(y))
+            fig_cm, ax = plt.subplots(figsize=(8, 6))
+            sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
+                        xticklabels=np.unique(y), yticklabels=np.unique(y), ax=ax)
+            ax.set_xlabel("Predicted")
+            ax.set_ylabel("Actual")
+            ax.set_title("Confusion Matrix")
+            st.pyplot(fig_cm)
+
+        with tab2:
+            report = classification_report(y, y_pred, output_dict=True)
+            st.dataframe(pd.DataFrame(report).transpose())
+
+    except Exception as e:
+        st.error(f"❌ Gagal membuat prediksi atau visualisasi: {e}")
+
+    
     st.success("✅ Analisis selesai!")
