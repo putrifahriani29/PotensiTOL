@@ -87,6 +87,7 @@ def generate_style(param_name, value, bg_color="#FFF5C2", text_color="blue"):
     '''
 
 # --------------------- Load Model ---------------------
+
 @st.cache_resource
 def load_model():
     with open("model_rf_potensiTOL.pkl", "rb") as f:
