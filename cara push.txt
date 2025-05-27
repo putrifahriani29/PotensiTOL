@@ -1,4 +1,4 @@
-1. git add .
+fe1. git add .
 2. git commit -m " "
 3. git fetch -p
 4. git rebase origin/main

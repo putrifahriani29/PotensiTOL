@@ -1,5 +1,4 @@
 import streamlit as st
-import pickle
 import pandas as pd
 from datetime import datetime
 from io import StringIO
@@ -53,18 +52,26 @@ st.markdown(
     """
     <style>
     .custom-title {
-        color: #11009E;
+        color: white;
+        background-color: #11009E;
         text-align: center;
-        font-size: 28px;
+        font-size: 22px;
         font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 20px;
+        border-radius: 20px;
         margin-top: 30px;
         margin-bottom: 30px;
+        display: inline-block;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     }
     </style>
-    <h1 class="custom-title">Analisis Dataset Program IP4T</h1>
+    <h1 class="custom-title">ANALISIS DATASET PROGAM IP4T DAN MODEL RANDOM FOREST CLASSIFIER </h1>
     """,
     unsafe_allow_html=True
 )
+
 
 
 # Upload file
@@ -83,7 +90,7 @@ if st.button("📂 Lakukan Analisis Dataset"):
         df = pd.read_csv(file)
         st.success("File berhasil diunggah!")
     else:
-        df = pd.read_csv("dataset20052025.csv", sep=";")
+        df = pd.read_csv("dataset20052025(3).csv", sep=";")
         st.info("Menggunakan dataset default")
 
     # Drop kolom NO jika ada
@@ -110,14 +117,23 @@ if st.button("📂 Lakukan Analisis Dataset"):
     # Ringkasan data kategorik dalam tabs
     st.subheader("📋 Ringkasan Data Kategorik")
     kategorik_cols = df.select_dtypes(include=['object', 'category']).columns.tolist()
+
     if kategorik_cols:
         tabs_kat = st.tabs(kategorik_cols)  # Buat tab untuk tiap kolom kategorik
         for tab, col in zip(tabs_kat, kategorik_cols):
             with tab:
-                freq_table = df[col].value_counts(dropna=False).rename_axis(col).reset_index(name='Jumlah')
-                st.dataframe(freq_table)
+                # Hitung frekuensi, dropna=True untuk otomatis drop NaN
+                freq = df[col].value_counts(dropna=True) \
+                            .rename_axis(col) \
+                            .reset_index(name='Jumlah')
+                
+                # Jika ada string literal 'None' yang ternyata data valid, sesuaikan filter ini
+                freq = freq[freq[col].notnull() & (freq[col] != 'None')]
+
+                st.dataframe(freq, use_container_width=True)
     else:
         st.info("Tidak ada kolom kategorik ditemukan pada data.")
+
 
 # Univariate Analysis Tabs: Violin, Boxplot, Histogram tanpa KDE
     st.subheader("📊 Univariate Analysis: Distribusi Luas Tanah")
@@ -206,47 +222,6 @@ if st.button("📂 Lakukan Analisis Dataset"):
     else:
         col1.info("Kolom 'POTENSI TOL' tidak ditemukan pada data.")
         col2.info("Kolom 'POTENSI TOL' tidak ditemukan pada data.")
-
-
-    # --------------------- Load Model ---------------------
-   # Fungsi untuk memuat model dari file .pkl
-    def load_model():
-        model_path = "model.pkl"
-        if os.path.exists(model_path):
-            with open(model_path, "rb") as file:
-                return pickle.load(file)
-        else:
-            st.error("❌ File 'model.pkl' tidak ditemukan.")
-            return None
-
-
-    # Load model dari file pickle
-model = load_model()
-
-if model is not None:
-    st.subheader("📋 Metrik Evaluasi")
-
-    try:
-        y_pred = model.predict(X_encoded)
-
-        tab1, tab2 = st.tabs(["Confusion Matrix", "Classification Report"])
-
-        with tab1:
-            cm = confusion_matrix(y, y_pred, labels=np.unique(y))
-            fig_cm, ax = plt.subplots(figsize=(8, 6))
-            sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
-                        xticklabels=np.unique(y), yticklabels=np.unique(y), ax=ax)
-            ax.set_xlabel("Predicted")
-            ax.set_ylabel("Actual")
-            ax.set_title("Confusion Matrix")
-            st.pyplot(fig_cm)
-
-        with tab2:
-            report = classification_report(y, y_pred, output_dict=True)
-            st.dataframe(pd.DataFrame(report).transpose())
-
-    except Exception as e:
-        st.error(f"❌ Gagal membuat prediksi atau visualisasi: {e}")
 
     
     st.success("✅ Analisis selesai!")
