@@ -47,31 +47,30 @@ if "toast_shown" not in st.session_state:
 # Tampilkan tanggal dan judul dengan CSS
 tampilkan_tanggal()
 
-
-st.markdown(
-    """
-    <style>
-    .custom-title {
-        color: white;
-        background-color: #11009E;
-        text-align: center;
-        font-size: 22px;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: 20px;
-        border-radius: 20px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        display: inline-block;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-    }
-    </style>
-    <h1 class="custom-title">ANALISIS DATASET PROGAM IP4T DAN MODEL RANDOM FOREST CLASSIFIER </h1>
-    """,
-    unsafe_allow_html=True
-)
-
+def display_title():
+    st.markdown(
+        """
+        <div style="text-align: center; margin-top: 20px;">
+            <h1 style="
+                color: white;
+                background-color: #11009E;
+                border-radius: 20px;
+                padding: 20px;
+                display: inline-block;
+                font-size: 22px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: bold;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+                margin-bottom: 30px;
+            ">
+                ANALISIS DATASET PROGAM IP4T DAN MODEL RANDOM FOREST CLASSIFIER
+            </h1>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+display_title()   
 
 
 # Upload file
